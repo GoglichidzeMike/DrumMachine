@@ -1,38 +1,131 @@
-.App {
+body {
+  user-select: none;
+  background-color: lighten(grey, 5%);
+  background-image: radial-gradient(
+    circle farthest-corner at 50.3% 44.5%,
+    rgba(116, 147, 179, 1) 0%,
+    rgba(62, 83, 104, 1) 100.2%
+  );
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.inner-container {
+  width: 600px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pad-bank {
+  width: 332px;
+  height: 272px;
+  display: inline-block;
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.drum-pad {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 80px;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding-top: 35px;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.greenBulb {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #abff00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px,
+    #89ff00 0 2px 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.redBulb {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #f00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+    rgba(255, 0, 0, 0.5) 0 2px 12px;
+  -webkit-animation: blinkRed 0.5s infinite;
+  -moz-animation: blinkRed 0.5s infinite;
+  -ms-animation: blinkRed 0.5s infinite;
+  -o-animation: blinkRed 0.5s infinite;
+  animation: blinkRed 0.5s infinite;
 }
 
-@keyframes App-logo-spin {
+@-webkit-keyframes blinkRed {
   from {
-    transform: rotate(0deg);
+    background-color: #f00;
+  }
+  50% {
+    background-color: #a00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+      rgba(255, 0, 0, 0.5) 0 2px 0;
   }
   to {
-    transform: rotate(360deg);
+    background-color: #f00;
+  }
+}
+@-moz-keyframes blinkRed {
+  from {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #a00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+      rgba(255, 0, 0, 0.5) 0 2px 0;
+  }
+  to {
+    background-color: #f00;
+  }
+}
+@-ms-keyframes blinkRed {
+  from {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #a00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+      rgba(255, 0, 0, 0.5) 0 2px 0;
+  }
+  to {
+    background-color: #f00;
+  }
+}
+@-o-keyframes blinkRed {
+  from {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #a00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+      rgba(255, 0, 0, 0.5) 0 2px 0;
+  }
+  to {
+    background-color: #f00;
+  }
+}
+@keyframes blinkRed {
+  from {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #a00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+      rgba(255, 0, 0, 0.5) 0 2px 0;
+  }
+  to {
+    background-color: #f00;
   }
 }
