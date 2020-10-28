@@ -12,6 +12,7 @@ const PadBank = ({ currentPad, power, updateDisplay }) => {
           clip={padBankArr[i].url}
           clipId={padBankArr[i].id}
           keyId={padBankArr[i].keyCode}
+          key={padBankArr[i].keyCode}
           keyTrigger={padBankArr[i].keyTrigger}
           power={power}
           updateDisplay={updateDisplay}
@@ -25,6 +26,7 @@ const PadBank = ({ currentPad, power, updateDisplay }) => {
           clip="#"
           clipId={padBankArr[i].id}
           keyId={padBankArr[i].keyCode}
+          key={padBankArr[i].keyCode}
           keyTrigger={padBankArr[i].keyTrigger}
           power={power}
           updateDisplay={updateDisplay}

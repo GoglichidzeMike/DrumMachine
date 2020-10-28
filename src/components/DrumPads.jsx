@@ -21,19 +21,16 @@ const DrumPads = ({
   keyId,
   keyTrigger,
   power,
+  key,
 }) => {
   const [padStyle, setPadStyle] = useState(inactiveStyle);
   // need to add even listeners
 
   function handler({ keyCode }) {
-    if (power) {
-      if (keyCode === keyId) {
-        console.log("true");
-        playSound();
-      }
+    if (keyCode === keyId) {
+      playSound();
     }
   }
-
   useEventListener("keydown", handler);
 
   // needs to be commented
@@ -60,11 +57,17 @@ const DrumPads = ({
 
   //main function to play sound
   const playSound = () => {
-    const sound = document.getElementById(keyTrigger);
-    sound.currentTime = 0;
-    sound.play();
-    activatePad();
-    updateDisplay(clipId.replace(/-/g, " "));
+    if (power) {
+      const sound = document.getElementById(keyTrigger);
+      sound.currentTime = 0;
+      // sound.crossOrigin = "anonymous";
+      sound.play();
+      activatePad();
+      updateDisplay(clipId.replace(/-/g, " "));
+    } else {
+      activatePad();
+      updateDisplay(clipId.replace(/-/g, " "));
+    }
   };
 
   return (
