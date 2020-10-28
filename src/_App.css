@@ -1,0 +1,40 @@
+body {
+  user-select: none;
+  background-color: lighten(grey, 5%);
+  background-image: radial-gradient(
+    circle farthest-corner at 50.3% 44.5%,
+    rgba(116, 147, 179, 1) 0%,
+    rgba(62, 83, 104, 1) 100.2%
+  );
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.inner-container {
+  width: 600px;
+  text-align: center;
+}
+
+.pad-bank {
+  width: 450px;
+  height: 600px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.drum-pad {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 80px;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding-top: 35px;
+  box-sizing: border-box;
+  cursor: pointer;
+}

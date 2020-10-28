@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import "./bulbs.css";
 
 //import components
 import PadBank from "./components/PadBank";

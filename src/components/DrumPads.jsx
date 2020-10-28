@@ -4,7 +4,7 @@ import useEventListener from "./event-listener";
 const activeStyle = {
   backgroundColor: "orange",
   boxShadow: "0 3px orange",
-  height: 77,
+  height: 155,
   marginTop: 13,
 };
 

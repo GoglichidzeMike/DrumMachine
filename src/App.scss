@@ -1,0 +1,51 @@
+$padWidth: 200px;
+$padHeight: 160px;
+
+body {
+  user-select: none;
+  background-color: lighten(grey, 5%);
+  background-image: radial-gradient(
+    circle farthest-corner at 50.3% 44.5%,
+    rgba(116, 147, 179, 1) 0%,
+    rgba(62, 83, 104, 1) 100.2%
+  );
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.inner-container {
+  outline: 5px solid #293241;
+  position: relative;
+  width: 660px;
+  text-align: center;
+
+  .pad-bank {
+    width: $padWidth * 3 + 32;
+    height: $padHeight * 3 + 32;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+
+  .drum-pad {
+    position: relative;
+    float: left;
+    width: $padWidth;
+    height: $padHeight;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding-top: 35px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: black;
+  }
+
+  .controls-container {
+    outline: 5px solid #293241;
+  }
+}
