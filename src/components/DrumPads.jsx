@@ -46,7 +46,7 @@ const DrumPads = ({
       setPadStyle(inactiveStyle);
     } else {
       setPadStyle({
-        height: 77,
+        height: 147,
         marginTop: 13,
         backgroundColor: "grey",
         boxShadow: "0 3px grey",

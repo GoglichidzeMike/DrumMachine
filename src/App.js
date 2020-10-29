@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import "./App.css";
-import "./bulbs.css";
+import "./styles/App.css";
+import "./styles/bulbs.css";
+import "./styles/slider.css";
+import $ from "jquery";
 
 //import components
 import PadBank from "./components/PadBank";
 import Controls from "./components/Controls";
 
-//importing the banks
+//importing the banks and slider
 import { bankOne } from "./components/banks";
 import { bankTwo } from "./components/banks";
+import { rangeSlider } from "./components/rangeSlider";
 
 function App() {
   const [currentPad, setCurrentPad] = useState(bankOne);
@@ -32,6 +35,15 @@ function App() {
   const handlePowerChange = () => {
     //changes power state
     setPower(!power);
+    //activates the range volume slider
+    rangeSlider();
+    //toggles the padChange button
+    if (!$("#cb4").prop("disabled")) {
+      $("#cb4").prop("disabled", true);
+    } else {
+      $("#cb4").prop("disabled", false);
+    }
+
     //changes display text as per power
     setDisplay(display === "Power Off" ? "Power On" : "Power Off");
 
@@ -71,6 +83,7 @@ function App() {
         updateDisplay={updateDisplay}
       />
       <Controls
+        currentPad={currentPad}
         adjustVolume={handleVolumeChange}
         volume={volume}
         padChange={handlePadChange}

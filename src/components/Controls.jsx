@@ -7,25 +7,39 @@ const Controls = ({
   adjustVolume,
   display,
   power,
+  currentPad,
 }) => {
   //makes the volume adjuster work
   const clips = [].slice.call(document.getElementsByClassName("clip"));
   clips.forEach((sound) => {
     sound.volume = volume;
   });
+  console.log(currentPad);
 
   return (
     <div className="controls-container">
-      <div className="control">
-        <button className="select" onClick={padChange}>
-          PadChangeButton
-        </button>
+      <div className="paddChange-btn">
+        <h3>Select Bank</h3>
+        <input
+          onClick={padChange}
+          className="tgl tgl-flat"
+          id="cb4"
+          type="checkbox"
+          disabled
+        />
+        <label className="tgl-btn" htmlFor="cb4"></label>
       </div>
-      <div className="control">
-        <button className="select" onClick={powerChange}>
-          Power Button
-        </button>
+      {/* trying the new button */}
+      <div className="power-btn">
+        <h3>Power</h3>
         <div className={power ? "greenBulb" : "redBulb"}></div>
+        <input
+          className="tgl tgl-ios"
+          id="cb2"
+          type="checkbox"
+          onClick={powerChange}
+        />
+        <label className="tgl-btn" htmlFor="cb2"></label>
       </div>
       <div className="volume-slider">
         <input
@@ -35,6 +49,7 @@ const Controls = ({
           step="0.01"
           type="range"
           value={volume}
+          className="range-slider__range"
         />
       </div>
 
