@@ -48,6 +48,7 @@ body {
 }
 
 .inner-container .drum-pad {
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 1.7rem;
   line-height: 1;
