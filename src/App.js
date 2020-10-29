@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./styles/App.css";
-import "./styles/bulbs.css";
-import "./styles/slider.css";
 import $ from "jquery";
 
 //import components
@@ -76,6 +74,9 @@ function App() {
   };
 
   return (
+    <>
+
+
     <div className="inner-container" id="drum-machine">
       <PadBank
         currentPad={currentPad}
@@ -92,6 +93,9 @@ function App() {
         display={display}
       />
     </div>
+    <p className="footer">dev by - <a target="blank" href="https://fb.me/mi5ke">Mikael G</a></p>
+    <p className="footer" id="bot"><a target="blank" href="https://github.com/GoglichidzeMike/DrumMachine">this project on Git</a></p>
+    </>
   );
 }
 

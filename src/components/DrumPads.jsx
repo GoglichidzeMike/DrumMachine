@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import useEventListener from "./event-listener";
 
 const activeStyle = {
-  backgroundColor: "orange",
-  boxShadow: "0 3px orange",
+  background:
+    "radial-gradient( circle 470px at 49.5% 48.5%,  rgba(3,76,153,1) 0%, rgba(0,0,0,1) 95.1% )",
+  boxShadow: "0 3px rgba(3,76,153,1)",
   height: 155,
   marginTop: 13,
 };
 
 const inactiveStyle = {
-  backgroundColor: "grey",
+  background:
+    "radial-gradient( circle 1774px at -20.9% 107%,  rgba(31,43,86,1) 0%, rgba(0,97,167,1) 100.3% )",
   marginTop: 10,
   boxShadow: "3px 3px 5px black",
 };
@@ -36,7 +38,10 @@ const DrumPads = ({
   // needs to be commented
   const activatePad = () => {
     if (power) {
-      if (padStyle.backgroundColor === "orange") {
+      if (
+        padStyle.background ===
+        "radial-gradient( circle 470px at 49.5% 48.5%,  rgba(3,76,153,1) 0%, rgba(0,0,0,1) 95.1% )"
+      ) {
         setPadStyle(inactiveStyle);
       } else {
         setPadStyle(activeStyle);
@@ -46,10 +51,10 @@ const DrumPads = ({
       setPadStyle(inactiveStyle);
     } else {
       setPadStyle({
-        height: 147,
+        height: 150,
         marginTop: 13,
-        backgroundColor: "grey",
-        boxShadow: "0 3px grey",
+        backgroundColor: "#2c5364",
+        boxShadow: "0 3px 2c5364",
       });
       setTimeout(() => setPadStyle(inactiveStyle), 100);
     }
@@ -79,7 +84,7 @@ const DrumPads = ({
         style={padStyle}
       >
         <audio className="clip" id={keyTrigger} src={clip} />
-        {keyTrigger}
+        <p id="keyTrigger">{keyTrigger}</p>
       </div>
     </div>
   );
