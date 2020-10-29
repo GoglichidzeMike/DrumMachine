@@ -353,14 +353,14 @@ input[type="range"] {
     border-radius: 3rem;
   }
   &:focus::-ms-fill-lower {
-    background: #ff6e40;
+    background: #35e1ff;
   }
   &::-ms-fill-upper {
     background: #bdbdbd;
     border-radius: 3rem;
   }
   &:focus::-ms-fill-upper {
-    background: #ff6e40;
+    background: #35e1ff;
   }
 
   //FIREFOX
@@ -385,6 +385,6 @@ input[type="range"] {
     cursor: pointer;
   }
   &:hover::-moz-range-track {
-    background: #ff6e40;
+    background: #35e1ff;
   }
 }
